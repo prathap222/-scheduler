@@ -1,9 +1,13 @@
 import React from 'react';
 
 export default function Show(props) {
-  const interviewerName = props.interviewer.map(interviewer => {
-    return interviewer.name;
-  })
+  // const interviewerName = props.interviewer.map(interviewer => {
+  //   return interviewer.name;
+  // })
+
+  const interviewerName = props.interviewer.map(interviewerObj => interviewerObj.interviewer);
+  console.log("props", props)
+  console.log(interviewerName)
 
   return (
     <main className="appointment__card appointment__card--show">
