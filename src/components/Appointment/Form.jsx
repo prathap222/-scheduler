@@ -18,7 +18,8 @@ export default function Form(props) {
     // props.onCancel;
     reset();
     props.onCancel()
-  }
+  };
+  console.log("This is Interviewer: ",currentInterviewer);
 
   return (
     <main className="appointment__card appointment__card--create">

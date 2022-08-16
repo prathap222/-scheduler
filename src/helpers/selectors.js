@@ -27,4 +27,22 @@ function getInterview(state, interview) {
   }
 }
 
-module.exports = {matchIds, getAppointmentsForDay, getInterview };
+ function getInterviewersForDay(state, day) {
+
+  let interviewersArr = [];
+  let interviewersByDay = [];
+  for(const stateDay of state.days) {
+    if(stateDay.name === day){
+      interviewersByDay = stateDay.interviewers;
+    }
+  }
+   if(interviewersByDay) {
+     for(const interviewId of interviewersByDay) {
+      interviewersArr.push(state.interviewers[interviewId]);
+     }
+   }
+   console.log("interview", interviewersArr);
+  return interviewersArr;
+} 
+
+module.exports = {matchIds, getAppointmentsForDay, getInterview,getInterviewersForDay};
