@@ -11,27 +11,6 @@ import { getAppointmentsForDay, getInterview,getInterviewersForDay } from "helpe
 
 export default function Application(props) {
 
-  // function bookInterview(id, interview) {
-  //   //console.log("interview and Id", id, interview)
-  //   const appointment ={
-  //     ...state.appointments[id],
-  //     interview: { ...interview }
-  //   };
-  //   const appointments = {
-  //     ... state.appointments,
-  //     [id]: appointment
-  //   };
-  //   setState({...state, appointments});
-  //   console.log("appointments", appointments)
-  //   console.log("interview sch", interview)
-  //   return axios.put(`http://localhost:8001/api/appointments/${id}}`, {interview:interview})
-  //   .then(response => {
-  //     setState({...state, appointments});
-  //     return response
-  //   })
-  //   .catch(err => console.log(err))
-  // }
-
   function bookInterview(id, interview) {
     console.log('bookInterview', id, interview);
     const appointment = {
