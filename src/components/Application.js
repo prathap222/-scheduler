@@ -49,7 +49,7 @@ export default function Application(props) {
           return response
         })
 
-        .catch(err => console.log (err))
+        // .catch(err => console.log (err))
   }
   
   

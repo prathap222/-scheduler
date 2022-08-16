@@ -7,12 +7,16 @@ export default function useVisualMode(initial){
 
   function transition(newMode, replace = false) {
     if (replace){
-      return setMode(newMode);
+      setHistory((prev) => {
+        return [...prev.slice(0,prev.length-1),newMode ];
+      });
+      setMode(newMode);
+    } else {
+        setMode(newMode);
+        setHistory((prev) => {
+          return [...prev, newMode];
+        });
     }
-    setMode(newMode);
-    setHistory((prev) => {
-      return [...prev, newMode];
-    });
   };
 
   function back() {
