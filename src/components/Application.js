@@ -50,6 +50,7 @@ export default function Application(props) {
   }, []);
 
   function bookInterview(id, interview) {
+    console.log("interview and Id", id, interview)
     const appointment ={
       ...state.appointments[id],
       interview: { ...interview }
@@ -59,6 +60,10 @@ export default function Application(props) {
       [id]: appointment
     };
     setState({...state, appointments});
+    return axios.put(`/api/apointments/${id}`, {interview})
+    .then(response => {
+      setState({...state, appointments});
+    })
   }
   
 
