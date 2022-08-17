@@ -6,12 +6,15 @@ import { action } from '@storybook/addon-actions/dist/preview';
 export default function Form(props) {
   //For keeping track of the name
   const [currentName, setName] = useState(props.name || "");
-  const [currentInterviewer, setInterviewer] = useState(props.value || null)
+  const [currentInterviewer, setInterviewer] = useState(props.value || null);
+  const [error, setError] = useState("");
+
 
   //Helper function to clear all fields
   const reset = () => {
     setName("")
     setInterviewer('null')
+    setError(null);
   }
 
   function cancel () {
@@ -19,6 +22,21 @@ export default function Form(props) {
     reset();
     props.onCancel()
   };
+
+  function validate() {
+    if (currentName === "") {
+      setError("Student name cannot be blank");
+      return;
+    }
+    if (currentInterviewer === null) {
+      setError("Please select an interviewer");
+      return;
+    }
+    setError("");
+
+    props.onSave(currentName, currentInterviewer);
+  }
+
   
 
   return (
@@ -27,24 +45,25 @@ export default function Form(props) {
         <form autoComplete="off">
           <input
             className="appointment__create-input text--semi-bold"
-            name={props.name}
-            type="text"        
-            onChange={(event) => setName(event.target.value)}            
-            value={currentName}
-            placeholder={currentName ? currentName : "Please enter your name"}
-
-            /*
-              This must be a controlled component
-            */
+            name="name"
+            type="text"
+            placeholder="Enter Student Name" 
+            value={currentName}       
+            onChange={(event) => {setName(event.target.value)}}            
+            data-testid="student-name-input"
           />
-
         </form>
-        <InterviewerList interviewers={props.interviewers} value={currentInterviewer} onChange={(event) => setInterviewer(event)} />
+        <section className="appointment__validation">{error}</section>
+        <InterviewerList 
+          interviewers={props.interviewers} 
+          value={currentInterviewer} 
+          onChange={setInterviewer} 
+        />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button disabled={!currentInterviewer || !currentName } confirm onClick={() => props.onSave(currentName,currentInterviewer)}>Save</Button>
+          <Button confirm onClick={() => {validate();}}>Save</Button>
         </section>
       </section>
     </main>
