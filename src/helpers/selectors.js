@@ -41,7 +41,7 @@ function getInterview(state, interview) {
       interviewersArr.push(state.interviewers[interviewId]);
      }
    }
-   console.log("interview", interviewersArr);
+   //console.log("interview", interviewersArr);
   return interviewersArr;
 } 
 

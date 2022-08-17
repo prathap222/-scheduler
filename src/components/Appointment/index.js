@@ -60,11 +60,12 @@ export default function Appointment(props) {
   }
 
 
-  console.log("interview",props.interview);
+ // console.log("interview",props.interview);
 
 
   return (
-    <article className="appointment" id={props.id}>
+    <article className="appointment" id={props.id}
+    data-testid="appointment">
     <Header time={props.time} />
     {mode === EMPTY && <Empty onAdd={() => transition("CREATE")} />}
       {mode === SHOW && (

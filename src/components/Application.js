@@ -11,9 +11,6 @@ import useApplicationData, {state, setDay, bookInterview, cancelInterview} from 
 
 export default function Application(props) {
 
-
-  
-  
   const {
     state,
     setDay,
