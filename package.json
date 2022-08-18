@@ -11,6 +11,7 @@
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.4"
   },
+  "proxy": "http://localhost:8001",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -18,7 +19,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
     "build-storybook": "build-storybook -s public",
-    "proxy": "http://localhost:8001"
+    "cypress": "cypress open -P ."
   },
   "browserslist": {
     "production": [
@@ -43,6 +44,7 @@
     "@testing-library/react": "^8.0.9",
     "@testing-library/react-hooks": "^8.0.1",
     "babel-loader": "^8.1.0",
+    "cypress": "^10.6.0",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^16.14.0",
     "sass": "^1.54.3"
