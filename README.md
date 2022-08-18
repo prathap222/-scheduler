@@ -29,15 +29,15 @@ npm run storybook
 ## Project Views
 
 
-!["Opening page"](url)
+!["Opening page"](https://github.com/prathap222/scheduler/blob/master/doc/Opening%20page.gif)
 
-!["Booking-interview"](url)
+!["Booking-interview"](https://github.com/prathap222/scheduler/blob/master/doc/Booking-interview.gif)
 
-!["Deleting-interview"](url)
+!["Deleting-interview"](https://github.com/prathap222/scheduler/blob/master/doc/Deleting-interview.gif)
 
-!["Editing-interview"](url)
+!["Editing-interview"](https://github.com/prathap222/scheduler/blob/master/doc/Editing-interview.gif)
 
-!["E2E-test(cypress)"](url)
+!["E2E-test(cypress)"](https://github.com/prathap222/scheduler/blob/master/doc/E2E-cypress%20test.gif)
 
 
 ## Project Stack
