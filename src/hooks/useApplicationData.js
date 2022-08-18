@@ -36,8 +36,8 @@ export default function useApplicationData() {
     }
   }
 
-  // Will aloow us to change the local state when we book an interview
-  function bookInterview(id, interview) {
+  // Will allow us to change the local state when we book an interview
+  function bookInterview(id, interview, mode) {
     if(!interview.interviewer){
       return Promise.reject("No interviewer was selected");
     }
@@ -50,7 +50,9 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    updateSpots(id,state.days,-1);
+    if(mode !== "EDIT") {
+      updateSpots(id,state.days,-1);
+    }
 
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
         .then(response => {
