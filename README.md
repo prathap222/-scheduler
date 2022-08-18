@@ -35,6 +35,8 @@ npm run storybook
 
 !["Deleting-interview"](url)
 
+!["Editing-interview"](url)
+
 !["E2E-test(cypress)"](url)
 
 
